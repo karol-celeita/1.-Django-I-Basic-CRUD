@@ -28,7 +28,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Pre-requisitos 📋
 
-- _Para visualizar las vistas debes estar autenticado como usuario,ingresa al admin de Django e ingresa, así podrás ver un correcto funcionamiento_
+- _Para visualizar las vistas debes estar autenticado como usuario, ve al admin de Django e ingresa, así podrás ver un correcto funcionamiento_
 
 
 ## Construido con 🛠️
