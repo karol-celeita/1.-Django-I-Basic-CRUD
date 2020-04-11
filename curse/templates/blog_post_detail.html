@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+ {% block content %}
+  
+  
+<div class="row">
+  <div class="container">
+    <h3 class="col-md-12 text-center">
+      <br>
+        <br>Detalle Post
+        </h3>
+        <br>
+          <br>
+
+  {% if request.user.is_authenticated %}
+  
+            <div class="card text-center">
+              <div class="card-header">
+                  {{object.title}}
+            </div>
+              <div class="card-body">
+                <h5 class="card-title">Contenido</h5>
+                <p class="card-text">{{object.content}}</p>
+                
+                <a href="{{obj.get_edit_url}}" class="btn btn-primary">Editar</a>
+                <a href="{{obj.get_delete_url}}/delete" class="btn btn-danger"> Eliminar</a>
+                <a href="../" class="btn btn-success"> Atrás</a>
+              </div>
+              <div class="card-footer text-muted">
+                    2 days ago
+              </div>
+            </div>
+{% endif %}
+ 
+    </div>
+</div>
+
+ {% endblock %}

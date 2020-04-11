@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="row">
+	  <div class="container">
+	  	{% if query %}
+        <br><br><h3 class="col-md-12 text-center">Tu búsqueda para {{query}}</h3>
+		{%else%}
+		
+		 <br><br><form class="form-inline" action='/search/'>
+		    <input class="form-control mr-sm-2 col-md-8 text-center" type="search" name='q' placeholder="Search" aria-label="Search">
+		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		  </form>
+		  {% endif %}
+
+		  {%for obj in blog_list%}
+
+		  	<div class="card-deck">
+ 			<div class="card mb-3" > 
+	  		<div class="card-body">
+	  	  	<h5 class="card-title"><li><a href='{{obj.get_absolute_url}}'> {{obj.title}} </a></li></h5>
+	   		 <p class="card-text">{{obj.publish_date}}</p>
+		    <p class="card-text">{{obj.content}}</p>
+		    <img src="{{obj.pillow.url}}">
+
+	 		 </div>
+			</div>
+			</div>
+
+		  {% endfor%}
+		</div>
+	</div>
+</div>
+
+{%endblock %}

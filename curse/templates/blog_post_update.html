@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+ {% block content %}
+ 
+<div class="row">
+    <div class="container">
+        <h3 class="col-md-12 text-center">
+            <br>
+                <br>
+                </h3>
+                <br>
+                    <br>
+                        <div class="card">
+                            <br>
+                                <h3 class="text-center">Actualizar datos</h3>
+                                <form method="post" enctype='multipart/form-data'> {% csrf_token %}
+
+                                 {% for field in form %}
+            
+                                    <div class="fieldWrapper">
+                                         {{ field.errors }}
+                
+                                        <div class="text-center">
+                                            <b>{{ field.label_tag }}</b>
+                                        </div>
+                                        <div class="text-center">{{ field }}</div>
+                                    </div>
+                                 {% endfor %}
+
+        
+                                    <p class="text-center">
+                                        <button type="submit" >Enviar</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+ {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+ {% block content %}
+ 	
+
+
+<div class="row">
+	<div class="container">
+		<h3 class="col-md-12 text-center"><br><br></h3><br><br>
+
+	{% if request.user.is_authenticated %}
+ 	<div class="card text-center">
+  <div class="card-header">
+    Eliminar Post
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Estas seguro que deseas eliminar? </h5>
+    <p class="card-text">{{object.title}}.</p>
+
+	<form method="POST" action=" ">{% csrf_token %}
+ 	
+ 		<button class="btn btn-danger"> Si, eliminar</button>
+ 		
+ 	</form> <br>
+	<a href="../" class="btn btn-success"> Atrás</a>
+
+  </div>
+  <div class="card-footer text-muted">
+  No se podrá restaurar nuevamente  </div>
+</div>
+ 	
+{% endif %}
+
+	 </div>
+	</div>
+
+ {% endblock %}

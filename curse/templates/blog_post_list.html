@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+ {% block content %}
+	<div class="row">
+	<div class="container">
+		<h3 class="col-md-12 text-center"><br><br>Estos son los post relevantes</h3><br><br>
+ 	{% for obj in object_list%}
+ 
+ 	<div class="card-deck">
+ 	<div class="card mb-3" > 
+	 <!--  <img class="card-img-top" src="..." alt="Card image cap"> -->
+	  <div class="card-body">
+	    <h5 class="card-title"><li><a href='{{obj.get_absolute_url}}'> {{obj.title}} </a></li></h5>
+	    <p class="card-text">{{obj.publish_date}}</p>
+	    <p class="card-text">{{obj.content}}</p>
+	    <img src="{{obj.pillow.url}}">
+	  </div>
+	</div>
+	</div>
+ 	{% endfor %}
+ </div>
+ </div>
+ {% endblock %}
